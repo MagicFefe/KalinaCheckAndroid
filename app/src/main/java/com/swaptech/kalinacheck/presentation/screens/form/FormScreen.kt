@@ -35,7 +35,7 @@ fun FormScreen(
                     Task(
                         taskOrderNumber = it + 1,
                         info = "Проверка",
-                        formType = if (it == 2) FormType.SINGLE_LINE else FormType.MULTI_LINE,
+                        taskType = if (it == 2) TaskType.SINGLE_LINE else TaskType.MULTI_LINE,
                         text = "",
                         onTextChange = {},
                         onDoneButtonClick = {}
@@ -62,12 +62,12 @@ fun FormScreen(
 fun Task(
     taskOrderNumber: Int,
     info: String,
-    formType: FormType,
+    taskType: TaskType,
     text: String,
     onTextChange: (String) -> Unit,
     onDoneButtonClick: () -> Unit,
 ) {
-    val textHintResource = if (formType == FormType.SINGLE_LINE) {
+    val textHintResource = if (taskType == TaskType.SINGLE_LINE) {
         R.string.enter_short_answer
     } else {
         R.string.enter_full_answer
@@ -101,8 +101,8 @@ fun Task(
             },
             value = text,
             onValueChange = onTextChange,
-            singleLine = formType == FormType.SINGLE_LINE,
-            maxLines = if (formType == FormType.SINGLE_LINE) 1 else 20
+            singleLine = taskType == TaskType.SINGLE_LINE,
+            maxLines = if (taskType == TaskType.SINGLE_LINE) 1 else 20
         )
         KalinaCheckButton(
             text = stringResource(R.string.done),
@@ -120,7 +120,7 @@ fun Hui() {
         Task(
             taskOrderNumber = 2,
             info = "Некое задание с мульти селектом",
-            formType = FormType.MULTI_LINE,
+            taskType = TaskType.MULTI_LINE,
             text = "",
             onTextChange = {
             },
