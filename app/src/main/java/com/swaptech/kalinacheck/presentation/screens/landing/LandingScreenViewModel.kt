@@ -1,6 +1,5 @@
 package com.swaptech.kalinacheck.presentation.screens.landing
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.swaptech.kalinacheck.domain.auth.AuthInteractor
@@ -9,7 +8,8 @@ import com.swaptech.kalinacheck.domain.auth.SendName
 import com.swaptech.kalinacheck.domain.auth.SendPhone
 import com.swaptech.kalinacheck.presentation.utils.MAX_PHONE_NUMBER_LENGTH
 import com.swaptech.kalinacheck.presentation.utils.RETRY_WAITING_TIME_SECONDS
-import com.swaptech.kalinacheck.presentation.utils.network_error_handling.*
+import com.swaptech.kalinacheck.presentation.utils.network_error_handling.onFail
+import com.swaptech.kalinacheck.presentation.utils.network_error_handling.onSuccess
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
