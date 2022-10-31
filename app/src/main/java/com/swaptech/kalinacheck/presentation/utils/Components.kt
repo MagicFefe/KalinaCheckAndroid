@@ -1,18 +1,34 @@
 package com.swaptech.kalinacheck.presentation.utils
 
-import android.net.Uri
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.ImageProxy
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.AppBarDefaults
+import androidx.compose.material.Button
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Block
 import androidx.compose.material.icons.filled.Close
@@ -41,10 +57,13 @@ import androidx.compose.ui.viewinterop.AndroidView
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.swaptech.kalinacheck.R
-import com.swaptech.kalinacheck.presentation.theme.*
+import com.swaptech.kalinacheck.presentation.theme.Brown
+import com.swaptech.kalinacheck.presentation.theme.DarkGray
+import com.swaptech.kalinacheck.presentation.theme.Green
+import com.swaptech.kalinacheck.presentation.theme.KalinaCheckTheme
+import com.swaptech.kalinacheck.presentation.theme.Red500
 import com.swaptech.kalinacheck.presentation.utils.camera.takePhoto
 import com.swaptech.kalinacheck.presentation.utils.ext.getCameraProvider
-import java.io.File
 import java.util.concurrent.Executor
 
 @Composable
@@ -495,7 +514,7 @@ fun AudioItem(
 @Composable
 fun AudioItem_Preview() {
     KalinaCheckTheme {
-        AudioItem(audioFilename = "test")     {
+        AudioItem(audioFilename = "test") {
             Icon(imageVector = Icons.Filled.Close, contentDescription = null)
         }
     }

@@ -14,7 +14,7 @@
     <string name="revision_expired_date_title">Надо выполнить до:</string>
     <string name="start_revision">Начать проверку</string>
     <string name="your_phone_number">Ваш телефон:</string>
-    <string name="accumulated_scores">Накоплено баллов</string>
+    <string name="accumulated_scores">Накоплено баллов:</string>
     <string name="your_name">Имя:</string>
     <string name="current_revision">Текущая проверка:</string>
     <string name="see_attachments">Посмотреть вложения</string>

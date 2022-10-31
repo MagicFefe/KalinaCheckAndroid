@@ -40,7 +40,7 @@ fun RevisionsScreen(
             modifier = Modifier.graphicsLayer {
                 shadowElevation = (4.dp).value
             },
-            backgroundColor = Beige,
+            backgroundColor = MaterialTheme.colors.surface,
             contentColor = MaterialTheme.colors.primary,
             selectedTabIndex = pagerState.currentPage,
             indicator = { tabPositions ->
@@ -128,7 +128,7 @@ fun HistoryRevisions(
                     revisionName = "Проверка №4950249609",
                     revisionExpiredDate = "12.07.2022 16:00",
                     isActive = false,
-                    successfulCompleted = true
+                    successfulCompleted = (0..1).random() == 1
                 )
             }
         }

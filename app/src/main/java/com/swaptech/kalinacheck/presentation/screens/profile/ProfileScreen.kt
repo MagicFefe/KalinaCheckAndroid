@@ -1,5 +1,6 @@
 package com.swaptech.kalinacheck.presentation.screens.profile
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -7,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -33,7 +35,7 @@ fun ProfileScreen(
         Text(
             text = stringResource(R.string.your_phone_number),
             fontWeight = FontWeight.Normal,
-            color = DarkGray
+            color = if (isSystemInDarkTheme()) Color.LightGray else DarkGray
         )
         Text(
             text = "+7(999)-999-99-99",
@@ -42,7 +44,7 @@ fun ProfileScreen(
         Text(
             text = stringResource(R.string.accumulated_scores),
             fontWeight = FontWeight.Normal,
-            color = DarkGray
+            color = if (isSystemInDarkTheme()) Color.LightGray else DarkGray
         )
         Text(
             text = "$scores",
@@ -55,8 +57,6 @@ fun ProfileScreen(
                 onSeeAttachmentsClick = onSeeAttachmentsClick,
                 onFormButtonClick = onFormButtonClick
             )
-        } else {
-
         }
     }
 }
